@@ -1,17 +1,27 @@
 # su26-ai301-contribution
+Contribution 26: Add an extra exercise test scenario for an existing pattern
 
-# Contribution [#]: [Issue Title]
+Contribution Number: 1
+Student: Prableen Kakar
+Issue: https://github.com/Totoro-jam/battle-tested-patterns/issues/26
+Status: Phase I In Progress
 
-**Contribution Number:** [1 / 2 / 3]  
+Why I Chose This Issue
+
+# Contribution 26: Add an extra exercise test scenario for an existing pattern
+
+**Contribution Number:** 1  
 **Student:** Prableen Kakar 
-**Issue:** [GitHub issue link]  
-**Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress / Complete]
+**Issue:** https://github.com/Totoro-jam/battle-tested-patterns/issues/26
+**Status:** Phase II
 
 ---
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+I chose this issue because it felt like a manageable way to actually get into the codebase without being thrown into the deep end. The task is adding one edge case test to an existing pattern exercise, which is specific enough that I know exactly what I need to do and where to look. Since it is scoped to one pattern and one language to start with, I felt like I could complete it without needing to understand every part of the project first.
+
+I also picked this because I want to get better at writing tests that actually catch real problems, not just the happy path. Edge cases like empty input or boundary values are the kinds of things that trip up real code, and thinking through those scenarios will help me understand the design patterns more deeply. I figured this would be a good way to learn how the project is structured while contributing something genuinely useful at the same time.
 
 ---
 
