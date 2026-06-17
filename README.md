@@ -58,10 +58,10 @@ Clone the fork, run `pnpm install`, and confirm the test runner works before mak
 8. Open the matching answer file at `exercises/answers/typescript/bloom-filter/` and verify the reference implementation already handles the edge case so `pnpm test` still passes with the new test in place.
 
 ### Reproduction Evidence
-Branch: https://github.com/prableenkaurr/battle-tested-patterns/tree/add-exercise-test-scenario
-Commit showing reproduction: [Link to commit -- to be added after first push to branch]
-Screenshots/logs: Tests pass on the unmodified fork. New test causes the expected failure before the answer implementation is verified.
-My findings: Exercise files follow a consistent `it('...', () => { /* TODO */ })` pattern. The answers directory already handles most edge cases, so adding an edge-case test to the exercise file is low-risk.
+Branch: https://github.com/prableenkaurr/battle-tested-patterns/tree/add-exercise-test-scenario  
+Commit showing reproduction: [Link to commit -- to be added after first push to branch]  
+Screenshots/logs: Tests pass on the unmodified fork. New test causes the expected failure before the answer is verified.  
+My findings: Exercise files use a consistent `it('...', () => { /* TODO */ })` pattern. The answers directory already handles most edge cases, so adding an edge-case test is low-risk and the answer will pass without changes.
 
 ## Solution Approach
 ### Analysis
@@ -75,7 +75,7 @@ Pick one pattern (Bloom Filter in TypeScript), add one edge-case `it(...)` test 
 ### Implementation Plan
 
 - Pick the Bloom Filter pattern and the edge case: calling `has()` on a newly constructed `BloomFilter` with nothing added should return `false` for any key.
-- Add a new `it('returns false for any key when the filter is empty', () => { /* TODO */ })` block to `exercises/typescript/bloom-filter/01-basic.test.ts`, matching the style of existing tests.
+- Add a new `it('returns false for any key when the filter is empty', () => { /* TODO */ })` block to `exercises/typescript/bloom-filter/01-basic.test.ts`, matching the style of the existing tests.
 - Run `pnpm test:exercises` on the answers directory to confirm the reference implementation passes the new test without changes.
 - Push the branch `add-exercise-test-scenario` to the fork and open a PR against `Totoro-jam/battle-tested-patterns:main` referencing Issue #26.
 
