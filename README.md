@@ -80,28 +80,37 @@ Pick one pattern (Bloom Filter in TypeScript), add one edge-case `it(...)` test 
 - Push the branch `add-exercise-test-scenario` to the fork and open a PR against `Totoro-jam/battle-tested-patterns:main` referencing Issue #26.
 
 ## Testing Strategy
-### Unit Tests
-- Test case 1: Empty filter -- `has(key)` returns `false` on a fresh `BloomFilter` with no items added
-- Test case 2: Single-item filter -- after `add('x')`, `has('x')` returns `true` and `has('y')` returns `false`
-- Test case 3: Filter at capacity -- insert items up to the declared capacity and check `has()` still returns `true` for all inserted items
+To validate the change, I first ran the existing exercise test suite to establish a passing baseline before making modifications. After adding the new edge-case test, I reviewed the reference Bloom Filter implementation and confirmed that it correctly returns false when queried before any items have been inserted.
 
-### Integration Tests
-- Integration scenario 1: Run `pnpm test:exercises` across all TypeScript exercises after adding the new test to confirm nothing else breaks
-- Integration scenario 2: Run `pnpm test` on the answers directory to confirm the reference answer passes all exercise tests including the new one
+Validation Steps Taken
 
-### Manual Testing
+Installed project dependencies using pnpm install.
+Ran pnpm test:exercises before making changes to confirm the repository was in a passing state.
+Added the new edge-case test to the Bloom Filter exercise.
+Verified that the corresponding reference answer already satisfies the new test requirements.
+Re-ran the exercise test suite to ensure no unrelated functionality was affected.
 
-Cloned the fork, ran `pnpm install`, executed `pnpm test:exercises`, and confirmed all existing tests pass. Reviewed the bloom-filter exercise and answer files to check the new test fits the existing structure.
+The testing approach focused on confirming that the new test improves exercise coverage while maintaining compatibility with the existing reference implementation.
 
 ## Implementation Notes
-### Week 1 Progress
 
-Set up the local environment, explored the repo structure, found the `exercises/typescript/` and `exercises/answers/typescript/` directories, and picked the Bloom Filter pattern. Created the `add-exercise-test-scenario` branch. Confirmed `pnpm test:exercises` passes on the unmodified fork.
+Completed the implementation for Issue #26 by adding an additional edge-case test scenario to the TypeScript Bloom Filter exercise. The new test verifies that calling has() on a newly created Bloom Filter returns false when no items have been added. The change was intentionally limited to the exercise test file so that learners are encouraged to consider boundary conditions while the reference solution remains unchanged. After adding the test, I reviewed the corresponding answer implementation to confirm it already handled the edge case correctly.
 
 ## Code Changes
-Files modified: `exercises/typescript/bloom-filter/01-basic.test.ts`
-Key commits: [To be added as work progresses on branch `add-exercise-test-scenario`]
-Approach decisions: Chose Bloom Filter because it has a simple, testable edge case (empty filter query) and the existing answer already handles it, so the PR is low-risk.
+Active Development Branch:
+https://github.com/prableenkaurr/battle-tested-patterns/tree/add-exercise-test-scenario
+
+Modified File:
+
+exercises/typescript/bloom-filter/01-basic.test.ts
+
+Meaningful Commits:
+
+Added edge-case test for empty Bloom Filter lookup behavior.
+Verified reference implementation passes the new test without modifications.
+
+Draft PR:
+To be submitted after final review and validation. The PR will reference Issue #26 and include a description of the added edge-case test scenario.
 
 ## Pull Request
 
